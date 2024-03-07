@@ -11,6 +11,7 @@ struct CharacterListView: View {
     @StateObject var viewModel = CharacterViewModel()
     
     var body: some View {
+        
         NavigationView {
             ZStack {
                 BackgroundView()
@@ -19,22 +20,30 @@ struct CharacterListView: View {
                     LazyVGrid(columns: viewModel.columns) {
                         ForEach(viewModel.characterList) { character in
                             CharacterCell(characterModel: character)
-                                  //Pagination
-//                                .onAppear {
-//                                    viewModel.shouldLoadMoreData(tvShow: tvShowModel)
-//                                }
+                                .onTapGesture {
+                                    withAnimation(.easeInOut) {
+                                        viewModel.isShowingDetail = true
+                                        viewModel.selectedCharacter = character
+                                    }
+                                }
                         }
                     }
 //                    .searchable(text: $viewModel.searchText, prompt: "Type your search here")
 //                    .onSubmit(of: .search) {
 //                        runSearch()
 //                    }
-                    .navigationTitle("🌀 Rick & Morty")
                 }
+                .disabled(viewModel.isShowingDetail)
+                .blur(radius: viewModel.isShowingDetail ? 20 : 0)
                 .padding()
                 
                 if viewModel.isLoading {
                     LoadingView()
+                }
+                
+                if let selectedCharacter = viewModel.selectedCharacter, viewModel.isShowingDetail {
+                    CharacterDetailView(character: selectedCharacter,
+                                        isShowingDetail: $viewModel.isShowingDetail)
                 }
             }
             .onAppear() {
@@ -42,7 +51,9 @@ struct CharacterListView: View {
                     runSearch()
                 }
             }
+            .navigationTitle("🌀 Rick & Morty")
         }
+        
         .alert(item: $viewModel.alertItem) { alertItem in
             Alert(title: alertItem.title,
                   message: alertItem.message,

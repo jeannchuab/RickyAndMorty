@@ -13,6 +13,8 @@ class CharacterViewModel: ObservableObject {
     @Published var characterList: [CharacterModel] = []
     @Published var alertItem: AlertItem?
     @Published var isLoading: Bool = false
+    @Published var isShowingDetail: Bool = false
+    @Published var selectedCharacter: CharacterModel?
     
     let columns: [GridItem] = [GridItem(.flexible()),
                                GridItem(.flexible())]
@@ -28,15 +30,10 @@ class CharacterViewModel: ObservableObject {
                     let result = try await NetworkManager.getCharacter()
                     characterList = []
                     characterList = result
-                    
-                    
-                    
+                                                            
 //                case .tvShowBySearch:
 //                    tvShowsModel = []
-//                    tvShowsModel = try await NetworkManager.searchTVShow(searchQuery: searchQuery)
-                    
-                
-                    
+//                    tvShowsModel = try await NetworkManager.searchTVShow(searchQuery: searchQuery)                                                        
                 default:
                     alertItem = AlertItem(error: .endpointNotFound)
                 }

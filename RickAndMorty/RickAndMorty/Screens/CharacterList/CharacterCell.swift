@@ -9,11 +9,9 @@ import SwiftUI
 
 struct CharacterCell: View {
     var characterModel: CharacterModel
-//    @EnvironmentObject var favoriteViewModel: FavoriteViewModel
+    @EnvironmentObject var characterViewModel: CharacterViewModel
     
     var body: some View {
-//        NavigationLink(destination: TVShowDetailView(tvShowModel: tvShowModel,
-//                                                     isFavorite: favoriteViewModel.isFavorite(tvShowModel))) {
             VStack {
                 Spacer()
                 
@@ -43,8 +41,7 @@ struct CharacterCell: View {
             .padding(.bottom)
             .padding(.trailing, 4)
             .padding(.leading, 4)
-//        }
-    }
+        }
 }
 
 #Preview {

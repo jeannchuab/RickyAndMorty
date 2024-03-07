@@ -24,6 +24,9 @@
 		0F6E970A2B99F46E00DC115D /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E97092B99F46E00DC115D /* CharacterCell.swift */; };
 		0F6E970C2B99F4E400DC115D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E970B2B99F4E400DC115D /* LoadingView.swift */; };
 		0F6E970E2B99FB4600DC115D /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E970D2B99FB4600DC115D /* RemoteImage.swift */; };
+		0F6E97122B9A068D00DC115D /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E97112B9A068D00DC115D /* CharacterDetailView.swift */; };
+		0F6E97142B9A0BCB00DC115D /* CharacterPropertieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E97132B9A0BCB00DC115D /* CharacterPropertieView.swift */; };
+		0F6E97162B9A0E2200DC115D /* XDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E97152B9A0E2200DC115D /* XDismissButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,9 @@
 		0F6E97092B99F46E00DC115D /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		0F6E970B2B99F4E400DC115D /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		0F6E970D2B99FB4600DC115D /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
+		0F6E97112B9A068D00DC115D /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
+		0F6E97132B9A0BCB00DC115D /* CharacterPropertieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPropertieView.swift; sourceTree = "<group>"; };
+		0F6E97152B9A0E2200DC115D /* XDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDismissButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +197,7 @@
 				0F6E97042B99F2C100DC115D /* BackgroundView.swift */,
 				0F6E970B2B99F4E400DC115D /* LoadingView.swift */,
 				0F6E970D2B99FB4600DC115D /* RemoteImage.swift */,
+				0F6E97152B9A0E2200DC115D /* XDismissButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -198,11 +205,29 @@
 		0F6E97062B99F37400DC115D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				0F6E96CD2B99E93B00DC115D /* CharacterListView.swift */,
+				0F6E97102B9A067E00DC115D /* CharacterDetail */,
+				0F6E970F2B9A064E00DC115D /* CharacterList */,
 				0F6E97072B99F38E00DC115D /* CharacterViewModel.swift */,
-				0F6E97092B99F46E00DC115D /* CharacterCell.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		0F6E970F2B9A064E00DC115D /* CharacterList */ = {
+			isa = PBXGroup;
+			children = (
+				0F6E96CD2B99E93B00DC115D /* CharacterListView.swift */,
+				0F6E97092B99F46E00DC115D /* CharacterCell.swift */,
+			);
+			path = CharacterList;
+			sourceTree = "<group>";
+		};
+		0F6E97102B9A067E00DC115D /* CharacterDetail */ = {
+			isa = PBXGroup;
+			children = (
+				0F6E97112B9A068D00DC115D /* CharacterDetailView.swift */,
+				0F6E97132B9A0BCB00DC115D /* CharacterPropertieView.swift */,
+			);
+			path = CharacterDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,7 +363,9 @@
 				0F6E96F72B99EB8600DC115D /* CharacterInfoModel.swift in Sources */,
 				0F6E97082B99F38E00DC115D /* CharacterViewModel.swift in Sources */,
 				0F6E96FA2B99EB9900DC115D /* MockData.swift in Sources */,
+				0F6E97122B9A068D00DC115D /* CharacterDetailView.swift in Sources */,
 				0F6E970E2B99FB4600DC115D /* RemoteImage.swift in Sources */,
+				0F6E97142B9A0BCB00DC115D /* CharacterPropertieView.swift in Sources */,
 				0F6E970C2B99F4E400DC115D /* LoadingView.swift in Sources */,
 				0F6E97052B99F2C100DC115D /* BackgroundView.swift in Sources */,
 				0F6E96FD2B99EC8C00DC115D /* NetworkManager.swift in Sources */,
@@ -347,6 +374,7 @@
 				0F6E96CE2B99E93B00DC115D /* CharacterListView.swift in Sources */,
 				0F6E96CC2B99E93B00DC115D /* RickAndMortyApp.swift in Sources */,
 				0F6E97002B99ED9800DC115D /* CustomError.swift in Sources */,
+				0F6E97162B9A0E2200DC115D /* XDismissButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
