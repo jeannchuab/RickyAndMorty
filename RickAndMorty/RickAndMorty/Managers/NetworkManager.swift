@@ -14,8 +14,7 @@ enum Paths: String {
 
 enum Endpoint: Equatable {
     case characterAll
-    case characterById(_ idTVShow: String)
-//    case characterBySearch
+    case characterById(_ id: String)
     
     var path: String {
         switch self {
@@ -25,9 +24,6 @@ enum Endpoint: Equatable {
             
         case .characterById(let id):
             return Paths.character.rawValue + "/" + String(id)
-            
-//        case .characterBySearch:
-//            return Paths.character.rawValue
         }
     }
 }
@@ -37,10 +33,6 @@ final class NetworkManager {
     private let cache = NSCache<NSString, UIImage>()
     
     static let baseUrl = "https://rickandmortyapi.com/api/"
-    
-    private init() {
-
-    }
         
     static func buildUrl(path: String) -> String {
         return baseUrl + path
@@ -71,15 +63,11 @@ final class NetworkManager {
         self.cache.setObject(image, forKey: cacheKey)
         
         return image
-    }
+    }    
     
+    //MARK: Character
     static func getCharacter() async throws -> [CharacterModel] {
-        var components = URLComponents(string: buildUrl(path: Endpoint.characterAll.path))
-//        components?.queryItems = []
-//        
-//        if page > 0 {
-//            components?.queryItems?.append(contentsOf: [URLQueryItem(name: "page", value: String(page))])
-//        }
+        let components = URLComponents(string: buildUrl(path: Endpoint.characterAll.path))
         
         guard let url = components?.url else {
             throw CustomError.invalidUrl

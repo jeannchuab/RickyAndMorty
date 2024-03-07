@@ -32,6 +32,10 @@ struct CharacterModel: Codable, Identifiable {
     let episode: [String]
     let url: String
     let created: String
+    
+    var statusFormatted: String {
+        return status.lowercased() == "dead" ? "\(status) 💀" : status
+    }
 }
 
 struct OriginModel: Codable {

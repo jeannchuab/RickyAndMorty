@@ -38,6 +38,12 @@ struct CharacterCell: View {
                 
                 Spacer()
             }
+            .onTapGesture {
+                withAnimation(.easeInOut) {
+                    characterViewModel.isShowingDetail = true
+                    characterViewModel.selectedCharacter = characterModel
+                }
+            }
             .padding(.bottom)
             .padding(.trailing, 4)
             .padding(.leading, 4)

@@ -10,11 +10,11 @@ import SwiftUI
 
 @MainActor
 class CharacterViewModel: ObservableObject {
-    @Published var characterList: [CharacterModel] = []
+    @Published private(set) var characterList: [CharacterModel] = []
+    @Published private(set) var isLoading: Bool = false
     @Published var alertItem: AlertItem?
-    @Published var isLoading: Bool = false
     @Published var isShowingDetail: Bool = false
-    @Published var selectedCharacter: CharacterModel?
+    @Published var selectedCharacter: CharacterModel = MockData.character1
     
     let columns: [GridItem] = [GridItem(.flexible()),
                                GridItem(.flexible())]
@@ -30,10 +30,7 @@ class CharacterViewModel: ObservableObject {
                     let result = try await NetworkManager.getCharacter()
                     characterList = []
                     characterList = result
-                                                            
-//                case .tvShowBySearch:
-//                    tvShowsModel = []
-//                    tvShowsModel = try await NetworkManager.searchTVShow(searchQuery: searchQuery)                                                        
+                                                  
                 default:
                     alertItem = AlertItem(error: .endpointNotFound)
                 }
@@ -50,12 +47,7 @@ class CharacterViewModel: ObservableObject {
         }
     }
     
-    func getCharacter(searchQuery: String = "") {
-        if searchQuery.isEmpty {
-            get(endpoint: .characterAll)
-        } 
-//        else {
-//            get(endpoint: .characterAll, page: currentPage, searchQuery: searchQuery)
-//        }
+    func getCharacter() {        
+        get(endpoint: .characterAll)
     }
 }

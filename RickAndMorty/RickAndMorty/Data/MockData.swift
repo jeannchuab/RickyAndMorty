@@ -12,7 +12,7 @@ struct MockData {
     //MARK: Character    
     static let character1 = CharacterModel(
         id: 1,
-        name: "Rick Sanchez",
+        name: "Mock Character",
         status: "Alive",
         species: "Human",
         type: "",

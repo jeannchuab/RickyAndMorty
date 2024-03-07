@@ -15,7 +15,6 @@ struct LoadingView: View {
                         
             ProgressView()
                 .progressViewStyle(CircularProgressViewStyle(tint: .accentColor))
-//                .controlSize(.large)
         }
     }
 }

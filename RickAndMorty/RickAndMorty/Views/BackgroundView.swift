@@ -9,6 +9,9 @@ import Foundation
 import SwiftUI
 
 struct BackgroundView: View {
+    
+    @State private var animatedGradient: Bool = false
+    
     var body: some View {
         LinearGradient(gradient: Gradient(colors: [Color.backgroundTop,
                                                    Color.backgroundMiddle,
@@ -16,6 +19,12 @@ struct BackgroundView: View {
                        startPoint: .topLeading,
                        endPoint: .bottomTrailing)
         .ignoresSafeArea(.all)
+        .hueRotation(.degrees(animatedGradient ? 45 : 0))
+        .onAppear {
+            withAnimation(.easeInOut(duration: 2).repeatForever(autoreverses: true) ) {
+                    animatedGradient.toggle()
+                }
+        }
     }
 }
 

@@ -15,8 +15,7 @@ struct CharacterPropertieView: View {
         VStack {
             Text(title)
                 .bold()
-                .font(.caption)
-//                .italic() //iOS 16 or newer
+                .font(.subheadline)
             
             Text(value)
                 .foregroundStyle(.secondary)
@@ -25,5 +24,5 @@ struct CharacterPropertieView: View {
 }
 
 #Preview {
-    CharacterPropertieView(title: "Carbs", value: "\(MockData.character1.gender)")
+    CharacterPropertieView(title: "Title", value: "Value")
 }

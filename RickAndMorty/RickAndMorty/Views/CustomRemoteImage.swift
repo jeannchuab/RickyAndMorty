@@ -20,13 +20,6 @@ final class ImageLoader: ObservableObject {
     }
 }
 
-struct RemoteImage: View {
-    var image: Image?
-    var body: some View {
-        image?.resizable() ?? Image("")
-    }
-}
-
 struct CustomRemoteImage: View {
     @StateObject var imageLoader = ImageLoader()
     
@@ -34,19 +27,17 @@ struct CustomRemoteImage: View {
     var body: some View {
         
         if urlString.isEmpty {
-            Image("movieclapper")
+            Image(systemName: "person.fill.questionmark")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 80, height: 238)
-//                .tint(.accentColor)
         } else {
             ZStack {
                 LoadingView()
-                
-                RemoteImage(image: imageLoader.image)
-                    .onAppear {
-                        imageLoader.load(fromURLString: urlString)
-                    }
+                imageLoader.image?.resizable()
+            }
+            .onAppear {
+                imageLoader.load(fromURLString: urlString)
             }
         }
     }

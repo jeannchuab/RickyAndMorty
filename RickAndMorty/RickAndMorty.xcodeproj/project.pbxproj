@@ -23,10 +23,14 @@
 		0F6E97082B99F38E00DC115D /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E97072B99F38E00DC115D /* CharacterViewModel.swift */; };
 		0F6E970A2B99F46E00DC115D /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E97092B99F46E00DC115D /* CharacterCell.swift */; };
 		0F6E970C2B99F4E400DC115D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E970B2B99F4E400DC115D /* LoadingView.swift */; };
-		0F6E970E2B99FB4600DC115D /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E970D2B99FB4600DC115D /* RemoteImage.swift */; };
+		0F6E970E2B99FB4600DC115D /* CustomRemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E970D2B99FB4600DC115D /* CustomRemoteImage.swift */; };
 		0F6E97122B9A068D00DC115D /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E97112B9A068D00DC115D /* CharacterDetailView.swift */; };
 		0F6E97142B9A0BCB00DC115D /* CharacterPropertieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E97132B9A0BCB00DC115D /* CharacterPropertieView.swift */; };
 		0F6E97162B9A0E2200DC115D /* XDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E97152B9A0E2200DC115D /* XDismissButton.swift */; };
+		0F6E97182B9A2FB800DC115D /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E97172B9A2FB800DC115D /* HomeTabView.swift */; };
+		0F6E971B2B9A301B00DC115D /* FavoritesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E971A2B9A301B00DC115D /* FavoritesListView.swift */; };
+		0FF20D352B9A3C4100860AAC /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF20D342B9A3C4100860AAC /* FavoriteViewModel.swift */; };
+		0FF20D372B9A3ECD00860AAC /* FavoriteEmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF20D362B9A3ECD00860AAC /* FavoriteEmptyListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,10 +70,14 @@
 		0F6E97072B99F38E00DC115D /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
 		0F6E97092B99F46E00DC115D /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		0F6E970B2B99F4E400DC115D /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		0F6E970D2B99FB4600DC115D /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
+		0F6E970D2B99FB4600DC115D /* CustomRemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRemoteImage.swift; sourceTree = "<group>"; };
 		0F6E97112B9A068D00DC115D /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
 		0F6E97132B9A0BCB00DC115D /* CharacterPropertieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPropertieView.swift; sourceTree = "<group>"; };
 		0F6E97152B9A0E2200DC115D /* XDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDismissButton.swift; sourceTree = "<group>"; };
+		0F6E97172B9A2FB800DC115D /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
+		0F6E971A2B9A301B00DC115D /* FavoritesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListView.swift; sourceTree = "<group>"; };
+		0FF20D342B9A3C4100860AAC /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
+		0FF20D362B9A3ECD00860AAC /* FavoriteEmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteEmptyListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,14 +129,14 @@
 			isa = PBXGroup;
 			children = (
 				0F6E96CB2B99E93B00DC115D /* RickAndMortyApp.swift */,
-				0F6E97032B99F2B200DC115D /* Views */,
-				0F6E96FE2B99ED8900DC115D /* Utilities */,
-				0F6E96FB2B99EC8100DC115D /* Managers */,
-				0F6E96F82B99EB8F00DC115D /* Data */,
-				0F6E97062B99F37400DC115D /* Screens */,
-				0F6E96F52B99EB6600DC115D /* Model */,
 				0F6E96CF2B99E93C00DC115D /* Assets.xcassets */,
+				0F6E96F82B99EB8F00DC115D /* Data */,
+				0F6E96FB2B99EC8100DC115D /* Managers */,
+				0F6E96F52B99EB6600DC115D /* Model */,
 				0F6E96D12B99E93C00DC115D /* Preview Content */,
+				0F6E97062B99F37400DC115D /* Screens */,
+				0F6E96FE2B99ED8900DC115D /* Utilities */,
+				0F6E97032B99F2B200DC115D /* Views */,
 			);
 			path = RickAndMorty;
 			sourceTree = "<group>";
@@ -196,7 +204,7 @@
 			children = (
 				0F6E97042B99F2C100DC115D /* BackgroundView.swift */,
 				0F6E970B2B99F4E400DC115D /* LoadingView.swift */,
-				0F6E970D2B99FB4600DC115D /* RemoteImage.swift */,
+				0F6E970D2B99FB4600DC115D /* CustomRemoteImage.swift */,
 				0F6E97152B9A0E2200DC115D /* XDismissButton.swift */,
 			);
 			path = Views;
@@ -205,9 +213,9 @@
 		0F6E97062B99F37400DC115D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				0F6E97102B9A067E00DC115D /* CharacterDetail */,
-				0F6E970F2B9A064E00DC115D /* CharacterList */,
-				0F6E97072B99F38E00DC115D /* CharacterViewModel.swift */,
+				0F6E97172B9A2FB800DC115D /* HomeTabView.swift */,
+				0FDD6F2C2B9A835C005F3976 /* Character */,
+				0F6E97192B9A300200DC115D /* FavoritesList */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -228,6 +236,26 @@
 				0F6E97132B9A0BCB00DC115D /* CharacterPropertieView.swift */,
 			);
 			path = CharacterDetail;
+			sourceTree = "<group>";
+		};
+		0F6E97192B9A300200DC115D /* FavoritesList */ = {
+			isa = PBXGroup;
+			children = (
+				0FF20D342B9A3C4100860AAC /* FavoriteViewModel.swift */,
+				0F6E971A2B9A301B00DC115D /* FavoritesListView.swift */,
+				0FF20D362B9A3ECD00860AAC /* FavoriteEmptyListView.swift */,
+			);
+			path = FavoritesList;
+			sourceTree = "<group>";
+		};
+		0FDD6F2C2B9A835C005F3976 /* Character */ = {
+			isa = PBXGroup;
+			children = (
+				0F6E97072B99F38E00DC115D /* CharacterViewModel.swift */,
+				0F6E97102B9A067E00DC115D /* CharacterDetail */,
+				0F6E970F2B9A064E00DC115D /* CharacterList */,
+			);
+			path = Character;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,20 +388,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FF20D352B9A3C4100860AAC /* FavoriteViewModel.swift in Sources */,
 				0F6E96F72B99EB8600DC115D /* CharacterInfoModel.swift in Sources */,
 				0F6E97082B99F38E00DC115D /* CharacterViewModel.swift in Sources */,
 				0F6E96FA2B99EB9900DC115D /* MockData.swift in Sources */,
 				0F6E97122B9A068D00DC115D /* CharacterDetailView.swift in Sources */,
-				0F6E970E2B99FB4600DC115D /* RemoteImage.swift in Sources */,
+				0F6E971B2B9A301B00DC115D /* FavoritesListView.swift in Sources */,
+				0F6E970E2B99FB4600DC115D /* CustomRemoteImage.swift in Sources */,
 				0F6E97142B9A0BCB00DC115D /* CharacterPropertieView.swift in Sources */,
 				0F6E970C2B99F4E400DC115D /* LoadingView.swift in Sources */,
 				0F6E97052B99F2C100DC115D /* BackgroundView.swift in Sources */,
 				0F6E96FD2B99EC8C00DC115D /* NetworkManager.swift in Sources */,
 				0F6E970A2B99F46E00DC115D /* CharacterCell.swift in Sources */,
+				0F6E97182B9A2FB800DC115D /* HomeTabView.swift in Sources */,
 				0F6E97022B99EDD900DC115D /* AlertContext.swift in Sources */,
 				0F6E96CE2B99E93B00DC115D /* CharacterListView.swift in Sources */,
 				0F6E96CC2B99E93B00DC115D /* RickAndMortyApp.swift in Sources */,
 				0F6E97002B99ED9800DC115D /* CustomError.swift in Sources */,
+				0FF20D372B9A3ECD00860AAC /* FavoriteEmptyListView.swift in Sources */,
 				0F6E97162B9A0E2200DC115D /* XDismissButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
