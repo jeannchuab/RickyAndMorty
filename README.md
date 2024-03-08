@@ -25,7 +25,7 @@ The main goal of this project it's an integration with the REST API [Rick and Mo
  - Build and run the project
 
 ## Previews
-A video preview of the project can be watched [here]()https://drive.google.com/file/d/1AzzrzcHM04MlguPldhuXZ9M9SA6Izm6M/view?usp=sharing
+A video preview of the project can be watched [here](https://drive.google.com/file/d/1AzzrzcHM04MlguPldhuXZ9M9SA6Izm6M/view?usp=sharing)
 
 <img width="949" alt="Screenshot 2024-03-07 at 20 48 51" src="https://github.com/jeannchuab/RickyAndMorty/assets/62518806/0654d472-8b17-45de-8c7e-da2016844de9">
 <img width="949" alt="Screenshot 2024-03-07 at 20 53 22" src="https://github.com/jeannchuab/RickyAndMorty/assets/62518806/75e52195-665e-4d80-a759-cc71d6023fd2">
