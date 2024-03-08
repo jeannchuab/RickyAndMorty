@@ -18,8 +18,17 @@ class CharacterViewModel: ObservableObject {
     
     let columns: [GridItem] = [GridItem(.flexible()),
                                GridItem(.flexible())]
+    
+    var currentPage = 1
+    
+    func shouldLoadMoreData(character: CharacterModel) {
+        if character.id == characterList.last?.id {
+            currentPage += 1
+            getCharacter()
+        }
+    }
         
-    private func get(endpoint: Endpoint, searchQuery: String = "") {
+    private func get(endpoint: Endpoint) {
         isLoading = true
         
         Task {
@@ -27,9 +36,14 @@ class CharacterViewModel: ObservableObject {
                 switch endpoint {
                     
                 case .characterAll:
-                    let result = try await NetworkManager.getCharacter()
-                    characterList = []
-                    characterList = result
+                    let result = try await NetworkManager.getCharacter(page: currentPage)
+                                        
+                    if currentPage == 0 {
+                        characterList = []
+                        characterList = result
+                    } else {
+                        characterList.append(contentsOf: result)
+                    }
                                                   
                 default:
                     alertItem = AlertItem(error: .endpointNotFound)

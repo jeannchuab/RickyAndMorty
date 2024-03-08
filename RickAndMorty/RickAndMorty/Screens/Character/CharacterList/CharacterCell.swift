@@ -31,6 +31,7 @@ struct CharacterCell: View {
                     .fontWeight(.bold)
                     .foregroundColor(Color(.label))
                     .multilineTextAlignment(.center)
+                    .minimumScaleFactor(0.7)
                     .frame(height: 50)
                     .minimumScaleFactor(0.7)
                     .padding([.trailing, .leading])

@@ -15,6 +15,7 @@ struct CharacterDetailView: View {
         VStack {
             CustomRemoteImage(urlString: characterViewModel.selectedCharacter.image)
                 .scaledToFill()
+                .frame(height: 250)
                    
             ZStack {
                 BackgroundView()
@@ -23,6 +24,7 @@ struct CharacterDetailView: View {
                     Text(characterViewModel.selectedCharacter.name)
                         .font(.title2)
                         .fontWeight(.semibold)
+                        .lineLimit(2)
                         .padding([.leading, .trailing])
                     
                     Divider()
@@ -54,13 +56,14 @@ struct CharacterDetailView: View {
                     .buttonStyle(.bordered)
                     .tint(Color.accentColor)
                     .controlSize(.large)
-                    .padding(.top, 16)
+                    .padding(.bottom, 8)
+                    .padding(.top, 8)
                 }
                 .padding([.top, .bottom])
             }
         }
-        .frame(width: 300, height: 550)
-        .cornerRadius(12)        
+        .frame(width: 300, height: 500)
+        .cornerRadius(12)
         .overlay {
             RoundedRectangle(cornerRadius: 16)
                 .stroke(.accent, lineWidth: 4)

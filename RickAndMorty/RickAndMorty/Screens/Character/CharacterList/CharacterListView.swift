@@ -19,7 +19,10 @@ struct CharacterListView: View {
                 ScrollView {
                     LazyVGrid(columns: characterViewModel.columns) {
                         ForEach(characterViewModel.characterList) { character in
-                            CharacterCell(characterModel: character)                                
+                            CharacterCell(characterModel: character)
+                                .onAppear {
+                                    characterViewModel.shouldLoadMoreData(character: character)
+                                }
                         }
                     }
                 }
@@ -39,8 +42,8 @@ struct CharacterListView: View {
                 characterViewModel.getCharacter()
             }
             .navigationTitle("🌀 Rick & Morty")
+            .navigationBarTitleDisplayMode(.automatic)
         }
-        
         .alert(item: $characterViewModel.alertItem) { alertItem in
             Alert(title: alertItem.title,
                   message: alertItem.message,

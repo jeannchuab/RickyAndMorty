@@ -66,8 +66,13 @@ final class NetworkManager {
     }    
     
     //MARK: Character
-    static func getCharacter() async throws -> [CharacterModel] {
-        let components = URLComponents(string: buildUrl(path: Endpoint.characterAll.path))
+    static func getCharacter(page: Int) async throws -> [CharacterModel] {
+        var components = URLComponents(string: buildUrl(path: Endpoint.characterAll.path))
+        components?.queryItems = []
+        
+        if page > 0 {
+            components?.queryItems?.append(contentsOf: [URLQueryItem(name: "page", value: String(page))])
+        }
         
         guard let url = components?.url else {
             throw CustomError.invalidUrl
@@ -82,7 +87,7 @@ final class NetworkManager {
         do {
             let decoder = JSONDecoder()
             let decodedResponse = try decoder.decode(CharacterInfoModel.self, from: data)
-            return decodedResponse.results.sorted(by: { $0.name < $1.name })
+            return decodedResponse.results
         } catch let error {
             print(error)
             throw CustomError.invalidData
